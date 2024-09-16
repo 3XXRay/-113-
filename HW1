@@ -1,6 +1,6 @@
 int main()
 {
-    long long X,Y;
+    long long X,Y; 
     float C,P,Z;
     printf ("輸入搭乘之公里數:");
     scanf ("%lld",&X);
