@@ -1,0 +1,30 @@
+# include <stdio.h> 
+# include <stdlib.h> 
+	int main (){
+		float W,H;
+		double BMI;
+		printf("請輸入體重:");
+		scanf (" %f",&W);
+		printf("請輸入身高:");
+		scanf (" %f",&H);
+		printf("體重:%.2f\n",W);
+		printf("身高:%.2f\n",H);
+		BMI=10000*W/(H*H);
+		printf("BMI:%.2lf\n",BMI);
+		if(24<=BMI && BMI<27)
+			printf("BMI檢測結果:過重\n");
+		else if(BMI<18.5)
+			printf("BMI檢測結果:過輕\n");
+		else if(27<=BMI && BMI<30)
+			printf("BMI檢測結果:輕度肥胖\n");
+		else if(30<=BMI && BMI<35)
+			printf("BMI檢測結果:中度肥胖\n");
+		else if(35<=BMI)
+			printf("BMI檢測結果:重度肥胖\n");
+		else
+			printf("BMI檢測結果:健康\n");
+			
+		system("pause");
+		return 0;
+		
+	}
