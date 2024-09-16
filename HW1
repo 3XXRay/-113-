@@ -1,0 +1,16 @@
+int main()
+{
+    long long X,Y;
+    float C,P,Z;
+    printf ("輸入搭乘之公里數:");
+    scanf ("%lld",&X);
+    printf ("\n");
+    Y=(30+(15*X));
+    C=X;
+    P=Y;
+    Z=P/C;
+    printf ("該趟計程車費用一共: %lld 元\n",Y);
+    printf ("該趟計程車費用一共: %.2f 元\n",Z);
+    return 0;
+}
+
