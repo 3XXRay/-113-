@@ -1,0 +1,31 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+	int main (){
+		char W,H;
+		int BMI;
+		printf("是否有DEMO:");
+		scanf (" %c",&W);
+		printf("是否有上傳:");
+		scanf (" %c",&H);
+        if(H=='y'){
+            printf("上傳日期:");
+            scanf (" %d",&BMI);}
+		if(W=='y' && H=='y' && BMI==20240916)
+			printf("分數為:100\n");
+		else if(W=='y' && H=='y' && 20240916<BMI && BMI<=20240920)
+			printf("分數為:90\n");
+        else if(W=='y')
+			printf("分數為:80\n");
+		if(W=='n' && H=='y' && BMI==20240916)
+			printf("分數為:80\n");
+		else if(W=='n' && H=='y' && 20240916<BMI && BMI<=20240920)
+			printf("分數為:60\n");
+        else if(W=='n')
+			printf("分數為:0\n");
+		system("pause");
+		return 0;
+
+	}
+
+
