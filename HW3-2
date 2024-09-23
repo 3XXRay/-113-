@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(){
+	int G,I;
+	srand(time(NULL));
+	int RNUM= (rand()%16);
+	int A,D,H;
+	A=RNUM;
+	int RNU= (rand()%16);
+	D=RNU;
+	int RN= (rand()%16);
+	H=RN;
+	char ch;
+		printf("輸入想抓寶可夢的代號:\n\“皮卡丘\”:1、\“小火龍\”:2、\“傑尼龜\”:3\n");
+		while (1){		
+			if (scanf("%d", &G) != 1 || G <= 0|| G> 3) {
+				printf("不要瞎掰好嗎?\n請重新輸入:\n");	
+			}else{
+			ch=getchar();
+			if (ch=='\n'){
+				break;}
+			else
+				printf("不要瞎掰好嗎\n請重新輸入:\n");
+			}
+        while (getchar() != '\n'); }
+	I=A+D+H;
+	printf("攻擊力:%d\n",A);
+	printf("防禦力:%d\n",D);
+	printf("生命值:%d\n",H);
+	printf("總能力值:%d\n",I);
+	switch (G) {
+	case 1:
+		printf("皮卡丘");
+		break;
+	case 2:
+		printf("小火龍");
+		break;
+	default:
+		printf("傑尼龜");
+		break;
+	}
+	if (I>=32&&A>=9&&D>=9&&H>=9){
+	printf("值得留下來練",I);
+			}
+		else{
+		printf("可以傳送給博士了");			
+		}
+} 
