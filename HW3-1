@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(){
+	
+	int G;
+	srand(time(NULL));
+	int RNUM= (rand()%100+1);
+	int I=0;
+	printf("%d\n",RNUM);
+	do{
+		printf("請輸入猜測:\n");
+		I++;
+		scanf("%d",&G);
+		if (G!=RNUM){
+		printf("請錯%d次\n",I);
+				}
+			else{
+			printf("請對Bingo\n");			
+			}
+		if (I>=3&&G!=RNUM){
+			printf("答案是:%d\n",RNUM);
+			break;
+			}
+	}while(G!=RNUM);
+} 
