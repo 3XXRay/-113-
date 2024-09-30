@@ -1,0 +1,58 @@
+#include<stdio.h> 
+#include<stdlib.h> 
+int main(){
+	int choice, IN;
+	int CODE=1000;
+	char ch;
+	printf("電子密碼鎖選單\n1.驗證密碼\n2.修改密碼\n3.清空密碼回到預設值\n請選擇:\n");
+	scanf ("%d",&choice);
+	FILE * fp; 
+	
+//	fprintf(fp,"%d",CODE);
+	switch (choice){
+		case 1:
+			fp=fopen("DDD.txt","r");
+			printf("請輸入4位數密碼:\n");
+			scanf ("%d",&IN);
+			fscanf(fp,"%d",&CODE);
+			if(IN==CODE)
+				printf("密碼正確");
+			else
+				printf("密碼錯誤");
+			break;
+		case 2:
+			fp=fopen("DDD.txt","w");
+			printf("請輸入現有密碼:\n");
+			scanf ("%d",&IN);
+			fscanf(fp,"%d",&CODE);
+			if(IN==CODE){ 
+				printf("請輸入新密碼:\n");
+				while (1){		
+					if (scanf("%d", &IN) != 1 || IN <1000 ||IN >9999) {
+						printf("請重新輸入:\n");	
+					}else{
+					ch=getchar();
+					if (ch=='\n'){
+						break;}
+					else
+						printf("請重新輸入:\n");
+					}
+		        	while (getchar() != '\n'); }
+				fprintf(fp,"%d",IN);
+				printf("修改完成\n");} 
+				else{ 
+					printf("密碼錯誤，無法更改");
+				} 
+			break; 
+		case 3:
+			fp=fopen("DDD.txt","w");
+			fprintf(fp,"%d",CODE);
+			CODE=1000;
+			printf("清空密碼，回歸預設值:%d",CODE);
+			break;
+		default:
+			printf("錯誤");
+			break;
+	}
+	fclose(fp);
+}
