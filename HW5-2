@@ -1,0 +1,30 @@
+#include <stdio.h> 
+#include <stdlib.h> 
+int main(){
+	int U,B,C=1;
+	char ch; 
+	printf("請輸入奇數階層:\n");
+	while (1){		
+		if (scanf("%d", &U) != 1 || (U%2)!=1 ) {
+			printf("請重新輸入奇數階層:\n");	
+		}else{
+			ch=getchar();
+			if (ch=='\n'){
+				break;
+			}else
+				printf("請重新輸入奇數階層:\n");
+		}
+	    while (getchar() != '\n');}
+	B=((U-1)/2);
+	for(int v=0;v>-1;v+=C){	
+		for(int X=0;X<(B-v);X++){
+			printf(" ");
+		}
+		for(int X=0;X<(v*2+1);X++){
+			printf("*");
+		}
+		printf("\n");
+		if(v>B-1)
+			C=-1;
+	}
+}
